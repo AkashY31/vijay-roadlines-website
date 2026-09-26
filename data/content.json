@@ -1,0 +1,50 @@
+{
+  "site": {
+    "name": "Vijay Roadlines",
+    "tagline": "Logistics Solutions — FTL & PTL Services",
+    "phone": "+91 95881 47207",
+    "phoneRaw": "919588147207",
+    "email": "vroadlinesggn@gmail.com",
+    "address": "Shop No.1, Vill. Babra Bakipur, Near Neelkanth Dharamkanta, Distt. Gurgaon, Haryana 122503, India",
+    "hours": "Mon – Sat, 9:00 AM – 8:00 PM"
+  },
+  "hero": {
+    "headline": "Your freight, moving on a straight line.",
+    "subhead": "Vijay Roadlines runs FTL and PTL truck freight across the NCR region — full loads, part loads, and reserve vehicles on standby for the day nothing goes to plan.",
+    "cta_primary": "Get a Freight Quote",
+    "cta_secondary": "View Our Fleet",
+    "stat1_value": "3+", "stat1_label": "Years moving freight",
+    "stat2_value": "10–15", "stat2_label": "Reserve vehicles on standby",
+    "stat3_value": "1–40T", "stat3_label": "Capacity range served"
+  },
+  "about": {
+    "kicker": "About Vijay Roadlines",
+    "body1": "We're guided by three things: cost, quality of service, and getting there on time. That's it — practiced consistently by a team that has spent years doing nothing but FTL and PTL transportation.",
+    "body2": "In just over three years we've become one of the transportation names companies in the NCR region actually rely on — not the cheapest quote, but the one that shows up.",
+    "body3": "Alongside our regular fleet we keep 10–15 vehicles in reserve, ready to move the moment a breakdown, roadblock, or traffic snarl threatens a delivery window. Every vehicle on the road carries GPS tracking, a first-aid box, FASTag, and a toolbox — because a shipment shouldn't stop for something we could have planned for."
+  },
+  "why": [
+    { "title": "Multi-modal delivery, honest pricing", "text": "FTL, PTL, and part-route combinations priced on the actual load — not a flat quote that pads the difference." },
+    { "title": "Transportation, not a side business", "text": "This is the only thing we do. Every route, every driver, every vehicle exists for freight." },
+    { "title": "Safety and security as standard", "text": "Insured loads, verified drivers, and vehicles fitted with GPS from pickup to delivery." },
+    { "title": "A team that's driven this before", "text": "Our chauffeurs and drivers know the NCR corridors — the shortcuts, the checkpoints, and the hours to avoid." },
+    { "title": "Reserve capacity when it matters", "text": "10–15 standby vehicles mean a breakdown on your route is our problem to solve, not yours to explain." },
+    { "title": "We keep the promises we make", "text": "If we quote a delivery window, we plan the route backward from it — not the other way around." }
+  ],
+  "process": [
+    { "title": "You share the load", "text": "Tell us origin, destination, weight, and timeline — a call, WhatsApp, or the form on this site all work." },
+    { "title": "We assign the vehicle", "text": "From 1-ton pickups to 40-ft trailers, we match the truck to the freight, not the other way around." },
+    { "title": "GPS-tracked transit", "text": "Every vehicle is tracked in transit, with a reserve fleet ready if the road gets in the way." },
+    { "title": "Delivered, on schedule", "text": "Proof of delivery and a straight answer if anything changed en route." }
+  ],
+  "fleet": [
+    { "category": "Light Commercial", "range": "1 – 3 Tons", "vehicles": "Pickups, Bolero, Ace, TATA 407" },
+    { "category": "Medium Trucks", "range": "3 – 10 Tons", "vehicles": "TATA 709, 1109, Eicher, Mazda" },
+    { "category": "Heavy Trucks", "range": "10 – 16 Tons", "vehicles": "TATA 1612 and equivalent heavy carriers" },
+    { "category": "Trailers", "range": "Up to 40 Tons", "vehicles": "20 ft & 40 ft trailers, container trucks" }
+  ],
+  "clients": [
+    "Delhivery", "Flipkart", "Vishal Mega Mart", "Rohan Energy Solutions Pvt. Ltd.", "Scorpion Express Pvt. Ltd."
+  ],
+  "clientsNote": "Customers who've used our services come back for the next one — that repeat business is the actual scorecard we track."
+}

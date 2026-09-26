@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Site Admin | Vijay Roadlines</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  body{ background:var(--navy-950); }
+  .admin-shell{ max-width:880px; margin:0 auto; padding:56px 24px 120px; color:var(--paper-100); }
+  .admin-card{ background:var(--navy-800); border:1px solid var(--steel-600); border-radius:4px; padding:36px; margin-bottom:28px; }
+  .admin-card h2{ font-size:20px; margin-bottom:6px; }
+  .admin-card .hint{ color:var(--slate-400); font-size:13.5px; margin-bottom:22px; }
+  .field{ margin-bottom:16px; }
+  .field label{ display:block; font-size:12.5px; color:var(--slate-400); margin-bottom:6px; font-family:var(--font-mono); }
+  .field input, .field textarea{
+    width:100%; padding:11px 13px; background:var(--navy-900); border:1px solid var(--steel-600);
+    color:var(--paper-100); border-radius:3px; font-family:var(--font-body); font-size:14.5px;
+  }
+  .field textarea{ min-height:70px; resize:vertical; }
+  .row2{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  .row3{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; }
+  .repeat-item{ border:1px dashed var(--steel-600); border-radius:3px; padding:16px; margin-bottom:12px; position:relative; }
+  .repeat-item button.remove{ position:absolute; top:10px; right:10px; background:none; border:none; color:var(--slate-400); cursor:pointer; font-size:13px; }
+  .repeat-item button.remove:hover{ color:var(--amber-500); }
+  .add-btn{ background:none; border:1px dashed var(--steel-500); color:var(--slate-400); padding:10px 16px; border-radius:3px; cursor:pointer; font-size:13.5px; }
+  .add-btn:hover{ color:var(--amber-500); border-color:var(--amber-500); }
+  .toolbar{ position:sticky; top:0; z-index:20; background:var(--navy-950); border-bottom:1px solid var(--navy-700); padding:16px 0; margin-bottom:8px; }
+  .toolbar .container{ display:flex; justify-content:space-between; align-items:center; }
+  #gate{ min-height:100vh; display:flex; align-items:center; justify-content:center; }
+  #gate .box{ background:var(--navy-800); border:1px solid var(--steel-600); padding:40px; border-radius:4px; width:340px; text-align:center; }
+  #gate input{ width:100%; padding:12px; margin:16px 0; border-radius:3px; border:1px solid var(--steel-600); background:var(--navy-900); color:var(--paper-100); font-size:15px; text-align:center; }
+  #gate .err{ color:var(--amber-500); font-size:13px; min-height:18px; }
+  .status-msg{ font-size:13.5px; color:var(--amber-500); margin-left:14px; }
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <div class="box">
+    <h2 style="font-family:var(--font-display);font-size:22px;">VIJAY ROADLINES</h2>
+    <p style="color:var(--slate-400);font-size:13.5px;margin-top:6px;">Site admin — content editor</p>
+    <input type="password" id="pw" placeholder="Admin password">
+    <button class="btn btn-amber" style="width:100%;" id="unlock">Unlock</button>
+    <p class="err" id="err"></p>
+    <p style="color:var(--slate-500);font-size:12px;margin-top:10px;">Default password: <strong>vijay2026</strong> — change it in <code>admin.html</code> before you publish.</p>
+  </div>
+</div>
+
+<div id="panel" style="display:none;">
+  <div class="toolbar">
+    <div class="container">
+      <a href="index.html" style="color:var(--slate-400);font-size:14px;">&larr; Back to site</a>
+      <div>
+        <button class="btn btn-outline" id="reset-btn">Reset preview</button>
+        <button class="btn btn-amber" id="save-btn">Save &amp; Preview</button>
+        <span class="status-msg" id="status"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="admin-shell">
+    <h1 style="font-size:26px;margin-bottom:6px;">Content Editor</h1>
+    <p style="color:var(--slate-400);font-size:14.5px;margin-bottom:32px;">
+      Edit the fields below, then <strong>Save &amp; Preview</strong> to see changes on this site immediately (in this browser).
+      When you're happy, use <strong>Download content.json</strong> at the bottom, replace the file in your project's
+      <code>/data</code> folder, and redeploy — that's what makes the change visible to every visitor.
+    </p>
+
+    <div class="admin-card">
+      <h2>Business info</h2>
+      <p class="hint">Shown in the header, footer, and contact page.</p>
+      <div class="row2">
+        <div class="field"><label>Company name</label><input data-path="site.name"></div>
+        <div class="field"><label>Tagline</label><input data-path="site.tagline"></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label>Phone (display)</label><input data-path="site.phone"></div>
+        <div class="field"><label>Phone (digits only, for tel/WhatsApp links)</label><input data-path="site.phoneRaw"></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label>Email</label><input data-path="site.email"></div>
+        <div class="field"><label>Hours</label><input data-path="site.hours"></div>
+      </div>
+      <div class="field"><label>Address</label><textarea data-path="site.address"></textarea></div>
+    </div>
+
+    <div class="admin-card">
+      <h2>Homepage hero</h2>
+      <div class="field"><label>Headline</label><input data-path="hero.headline"></div>
+      <div class="field"><label>Subheading</label><textarea data-path="hero.subhead"></textarea></div>
+      <div class="row2">
+        <div class="field"><label>Primary button text</label><input data-path="hero.cta_primary"></div>
+        <div class="field"><label>Secondary button text</label><input data-path="hero.cta_secondary"></div>
+      </div>
+      <div class="row3">
+        <div class="field"><label>Stat 1 value</label><input data-path="hero.stat1_value"></div>
+        <div class="field"><label>Stat 2 value</label><input data-path="hero.stat2_value"></div>
+        <div class="field"><label>Stat 3 value</label><input data-path="hero.stat3_value"></div>
+      </div>
+      <div class="row3">
+        <div class="field"><label>Stat 1 label</label><input data-path="hero.stat1_label"></div>
+        <div class="field"><label>Stat 2 label</label><input data-path="hero.stat2_label"></div>
+        <div class="field"><label>Stat 3 label</label><input data-path="hero.stat3_label"></div>
+      </div>
+    </div>
+
+    <div class="admin-card">
+      <h2>About page</h2>
+      <div class="field"><label>Paragraph 1</label><textarea data-path="about.body1"></textarea></div>
+      <div class="field"><label>Paragraph 2</label><textarea data-path="about.body2"></textarea></div>
+      <div class="field"><label>Paragraph 3</label><textarea data-path="about.body3"></textarea></div>
+    </div>
+
+    <div class="admin-card">
+      <h2>Why Vijay Roadlines</h2>
+      <p class="hint">These six points appear on the home and about pages.</p>
+      <div id="why-list"></div>
+      <button class="add-btn" id="add-why">+ Add reason</button>
+    </div>
+
+    <div class="admin-card">
+      <h2>How it works (process steps)</h2>
+      <div id="process-list"></div>
+      <button class="add-btn" id="add-process">+ Add step</button>
+    </div>
+
+    <div class="admin-card">
+      <h2>Fleet / goods carrier segment</h2>
+      <div id="fleet-list"></div>
+      <button class="add-btn" id="add-fleet">+ Add vehicle category</button>
+    </div>
+
+    <div class="admin-card">
+      <h2>Clients</h2>
+      <p class="hint">One line per client name.</p>
+      <textarea id="clients-text" style="width:100%;min-height:110px;padding:12px;border-radius:3px;border:1px solid var(--steel-600);background:var(--navy-900);color:var(--paper-100);font-size:14.5px;"></textarea>
+      <div class="field" style="margin-top:14px;"><label>Clients section note</label><textarea data-path="clientsNote"></textarea></div>
+    </div>
+
+    <div class="admin-card">
+      <h2>Export</h2>
+      <p class="hint">Download the file that makes your edits permanent for all visitors.</p>
+      <button class="btn btn-amber" id="download-btn">Download content.json</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/admin.js"></script>
+</body>
+</html>
