@@ -66,13 +66,13 @@
         )
         .join("");
     }
-    // fleet manifest table
+    // fleet capacity cards
     const fleetBody = document.querySelector("[data-repeat='fleet']");
     if (fleetBody && Array.isArray(data.fleet)) {
       fleetBody.innerHTML = data.fleet
         .map(
           (row) =>
-            `<tr><td class="cat">${escapeHtml(row.category)}</td><td>${escapeHtml(row.range)}</td><td>${escapeHtml(row.vehicles)}</td></tr>`
+            `<article class="fleet-card"><p class="fleet-card-range">${escapeHtml(row.range)}</p><h3>${escapeHtml(row.category)}</h3><p>${escapeHtml(row.vehicles)}</p></article>`
         )
         .join("");
     }
@@ -94,6 +94,28 @@
     });
     document.querySelectorAll("[data-cms-wa]").forEach((el) => {
       el.setAttribute("href", "https://wa.me/" + data.site.phoneRaw);
+    });
+  }
+
+  function setupWhatsAppQuote(data) {
+    const button = document.querySelector("[data-whatsapp-quote]");
+    const form = button && button.closest("form");
+    if (!button || !form) return;
+
+    button.addEventListener("click", () => {
+      if (!form.reportValidity()) return;
+
+      const fields = [
+        ["Name", form.elements.Name.value],
+        ["Phone", form.elements.Phone.value],
+        ["Pickup", form.elements["Pickup location"].value],
+        ["Drop-off", form.elements["Drop location"].value],
+        ["Load", form.elements["Load type"].value],
+        ["Details", form.elements.Details.value]
+      ];
+      const message = ["Hello Vijay Roadlines, I would like a freight quote:", ...fields.filter(([, value]) => value).map(([label, value]) => `${label}: ${value}`)].join("\n");
+      const url = `https://wa.me/${data.site.phoneRaw}?text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank", "noopener,noreferrer");
     });
   }
 
@@ -126,6 +148,7 @@
     fillText(document, data);
     renderRepeaters(data);
     fillContactLinks(data);
+    setupWhatsAppQuote(data);
     markActiveNav();
     setupMobileNav();
     document.dispatchEvent(new CustomEvent("vr-content-ready", { detail: data }));

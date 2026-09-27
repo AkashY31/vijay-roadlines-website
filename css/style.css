@@ -129,6 +129,15 @@ p {
 	color: #42d477;
 }
 
+.top-strip-actions .top-phone-link>span:first-child {
+	color: var(--amber-500);
+	font-size: 17px;
+}
+
+[aria-label="Call Vijay Roadlines"]>span[aria-hidden="true"] {
+	color: var(--amber-500);
+}
+
 .top-strip-actions a:hover {
 	color: var(--amber-500);
 }
@@ -659,7 +668,7 @@ section {
 
 /* ---------- fleet manifest table ---------- */
 .fleet-visual {
-	margin-bottom: 24px;
+	margin: 0 0 24px;
 	overflow: hidden;
 	border-radius: 18px;
 	border: 1px solid rgba(20, 27, 41, 0.08);
@@ -673,37 +682,46 @@ section {
 	object-fit: cover;
 }
 
-.manifest {
-	width: 100%;
-	border-collapse: collapse;
+.fleet-visual figcaption {
+	padding: 9px 14px;
+	background: var(--navy-900);
+	color: var(--slate-400);
+	font-size: 12px;
+}
+
+.fleet-availability-note {
+	margin-bottom: 18px;
+}
+
+.fleet-card-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 1px;
+	background: #dcd7c9;
+	border: 1px solid #dcd7c9;
+}
+
+.fleet-card {
+	min-height: 180px;
+	padding: 24px;
+	background: var(--paper-050);
+}
+
+.fleet-card-range {
+	margin-bottom: 10px;
 	font-family: var(--font-mono);
-	font-size: 14.5px;
-}
-
-.manifest thead th {
-	text-align: left;
-	font-family: var(--font-body);
-	font-weight: 600;
 	font-size: 13px;
-	color: var(--slate-500);
-	border-bottom: 2px solid var(--navy-900);
-	padding: 12px 16px;
+	color: var(--amber-600);
 }
 
-.manifest tbody td {
-	padding: 20px 16px;
-	border-bottom: 1px solid #dcd7c9;
-	vertical-align: top;
+.fleet-card h3 {
+	margin-bottom: 8px;
+	font-size: 20px;
 }
 
-.manifest tbody tr:hover {
-	background: var(--amber-100);
-}
-
-.manifest .cat {
-	font-family: var(--font-body);
-	font-weight: 600;
-	font-size: 15.5px;
+.fleet-card>p:last-child {
+	color: var(--slate-600);
+	font-size: 14px;
 }
 
 /* ---------- services rows ---------- */
@@ -741,6 +759,59 @@ section {
 	padding: 12px 20px;
 	border-radius: 999px;
 	box-shadow: 0 8px 18px rgba(11, 15, 23, 0.08);
+}
+
+.service-coverage {
+	display: grid;
+	grid-template-columns: 1.2fr 0.8fr;
+	gap: 48px;
+	align-items: start;
+}
+
+.coverage-heading {
+	margin-bottom: 12px;
+	font-size: 25px;
+}
+
+.coverage-copy {
+	max-width: 58ch;
+	margin-bottom: 22px;
+	color: var(--slate-600);
+}
+
+.coverage-panel {
+	padding: 28px;
+	background: var(--navy-900);
+	color: var(--paper-100);
+	border-left: 3px solid var(--amber-500);
+}
+
+.coverage-panel h3 {
+	margin-bottom: 12px;
+	font-size: 21px;
+}
+
+.coverage-panel p,
+.coverage-panel address {
+	color: var(--slate-400);
+	font-style: normal;
+	font-size: 14px;
+}
+
+.coverage-panel address {
+	margin: 14px 0;
+}
+
+.text-link {
+	display: inline-block;
+	margin-top: 6px;
+	color: var(--amber-500);
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
+.text-link:hover {
+	color: var(--paper-100);
 }
 
 /* ---------- contact ---------- */
@@ -793,6 +864,77 @@ form.contact-form {
 	display: flex;
 	flex-direction: column;
 	gap: 16px;
+}
+
+.form-honey {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+.btn-whatsapp {
+	align-self: flex-start;
+	background: #18b85a;
+	color: #fff;
+	box-shadow: none;
+}
+
+.btn-whatsapp:hover {
+	background: #119c4a;
+}
+
+.thanks-page {
+	display: grid;
+	min-height: 100vh;
+	place-items: center;
+	padding: 40px 24px;
+	background: var(--navy-950);
+	color: var(--paper-100);
+}
+
+.thanks-content {
+	width: min(100%, 680px);
+	padding: clamp(28px, 6vw, 56px);
+	border: 1px solid var(--steel-600);
+	border-top: 3px solid var(--amber-500);
+	background: var(--navy-900);
+}
+
+.thanks-brand {
+	margin-bottom: 48px;
+}
+
+.thanks-content .kicker {
+	display: block;
+	margin-bottom: 12px;
+	color: var(--amber-500);
+	font-family: var(--font-mono);
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+.thanks-content h1 {
+	margin-bottom: 16px;
+	font-size: 36px;
+}
+
+.thanks-content>p {
+	max-width: 58ch;
+	color: var(--slate-400);
+}
+
+.thanks-actions {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	flex-wrap: wrap;
+	margin-top: 28px;
 }
 
 form.contact-form label {
@@ -915,7 +1057,7 @@ footer.site-footer {
 }
 
 /* ---------- responsive ---------- */
-@media (max-width:900px) {
+@media (max-width:1020px) {
 	nav.main-nav {
 		display: none;
 	}
@@ -951,6 +1093,10 @@ footer.site-footer {
 		row-gap: 32px;
 	}
 
+	.fleet-card-grid {
+		grid-template-columns: 1fr 1fr;
+	}
+
 	.process-rail::before {
 		display: none;
 	}
@@ -967,6 +1113,11 @@ footer.site-footer {
 		grid-template-columns: 1fr;
 		gap: 10px;
 	}
+
+	.service-coverage {
+		grid-template-columns: 1fr;
+		gap: 24px;
+	}
 }
 
 @media (max-width:560px) {
@@ -976,7 +1127,7 @@ footer.site-footer {
 		padding-bottom: 7px;
 	}
 
-	.top-strip .container > span {
+	.top-strip .container>span {
 		display: none;
 	}
 
@@ -1012,6 +1163,14 @@ footer.site-footer {
 
 	.footer-grid {
 		grid-template-columns: 1fr;
+	}
+
+	.fleet-card-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.thanks-content h1 {
+		font-size: 30px;
 	}
 
 	.cta-banner .container {

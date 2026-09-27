@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://akashy31.github.io/vijay-roadlines-website/sitemap.xml

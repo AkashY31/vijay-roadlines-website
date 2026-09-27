@@ -1,7 +1,8 @@
 # Vijay Roadlines — website
 
-A 5-page site (Home, About, Fleet, Clients, Contact) plus a password-protected
-`admin.html` content editor. Pure HTML/CSS/JS — no build step, no server
+A 6-page site (Home, About, Fleet, Service Areas, Clients, Contact), an enquiry
+confirmation page, and a password-gated `admin.html` content editor. Pure
+HTML/CSS/JS — no build step, no server
 required, deploys free on any static host.
 
 ## Deploy it for free (pick one)
@@ -22,7 +23,7 @@ required, deploys free on any static host.
 **GitHub Pages**
 1. Create a new GitHub repo and push this folder's contents to it.
 2. Repo → Settings → Pages → Deploy from branch → `main` / root.
-3. Your site is live at `https://<username>.github.io/<repo>`.
+3. Vijay Roadlines is live at https://akashy31.github.io/vijay-roadlines-website/.
 
 Any of these works — none require a credit card for a small site like this.
 
@@ -30,8 +31,8 @@ Any of these works — none require a credit card for a small site like this.
 
 This is a static site, so there's no database to log into. Instead:
 
-- All the text on the site (headline, stats, "why choose us" items, fleet
-  table, client list, contact info) lives in **`data/content.json`**.
+- Site content (headline, stats, service details, fleet categories, client
+  list, and contact info) lives in **`data/content.json`**.
 - `admin.html` is a password-gated form that edits that content.
 - **Save & Preview** writes your edits to your browser's local storage, so
   you can see them live on the site *in that browser only* — nothing is
@@ -55,10 +56,10 @@ Supabase) — happy to help you set that up if you want to go that route.
 ## The contact form
 
 The Contact page form posts to **FormSubmit** (formsubmit.co), a free
-service that forwards submissions straight to
-`vroadlinesggn@gmail.com` — no backend or account needed. The very first
-submission after deploying will ask you to click a one-time confirmation
-link in your inbox to activate it.
+service that forwards submissions to `vroadlinesggn@gmail.com`. Successful
+submissions return to `thanks.html`. The first submission may require the
+site owner to confirm a one-time activation email. The WhatsApp quote button
+opens a draft containing the entered details; the visitor still has to send it.
 
 ## File structure
 
@@ -67,20 +68,24 @@ vijay-roadlines/
 ├── index.html          Home
 ├── about.html
 ├── fleet.html           Goods carrier segment
+├── service-area.html    Gurgaon and NCR coverage and office directions
 ├── clients.html
 ├── contact.html
+├── thanks.html          Enquiry confirmation
 ├── admin.html           Password-gated content editor
 ├── css/style.css
 ├── js/site.js           Loads data/content.json into every page
 ├── js/admin.js          Admin panel logic
-└── data/content.json    All editable site text — single source of truth
+├── data/content.json    Editable site content
+├── sitemap.xml          Public pages for search engines
+└── robots.txt           Crawler guidance
 ```
 
 ## Customizing further
 
-- **Logo/photos:** the site currently uses type and color instead of photos.
-  Drop image files into a new `img/` folder and reference them in the HTML
-  where you'd like a photo (e.g. a hero truck photo, fleet photos).
+- **Fleet photos and testimonials:** current freight photos are representative
+  stock imagery. Replace them with approved photos of the actual fleet and add
+  customer quotes or case studies only after receiving permission.
 - **Colors/fonts:** all design tokens are CSS variables at the top of
   `css/style.css` (`--navy-950`, `--amber-500`, etc.) — change them once and
   they apply everywhere.

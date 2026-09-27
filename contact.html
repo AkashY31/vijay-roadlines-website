@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact | Vijay Roadlines</title>
 <meta name="description" content="Call, WhatsApp, or send a freight enquiry to Vijay Roadlines for FTL and PTL truck transport in Gurgaon and the NCR region.">
+<link rel="canonical" href="https://akashy31.github.io/vijay-roadlines-website/contact.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Vijay Roadlines">
+<meta property="og:title" content="Contact Vijay Roadlines">
+<meta property="og:description" content="Request an FTL or PTL freight quote in Gurgaon and the NCR region.">
+<meta property="og:url" content="https://akashy31.github.io/vijay-roadlines-website/contact.html">
+<meta property="og:image" content="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&amp;fit=crop&amp;w=1200&amp;q=80">
+<meta property="og:image:alt" content="Representative freight truck on a highway">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +25,7 @@
   <div class="container">
     <span>Freight moving across the NCR region, every day.</span>
     <div class="top-strip-actions">
-      <a href="tel:+919588147207" data-cms-tel>Call: <span data-cms="site.phone">+91 95881 47207</span></a>
+      <a class="top-phone-link" href="tel:+919588147207" data-cms-tel aria-label="Call Vijay Roadlines"><span aria-hidden="true">&#9742;</span> <span data-cms="site.phone">+91 95881 47207</span></a>
       <a href="https://wa.me/919588147207" data-cms-wa>WhatsApp</a>
     </div>
   </div>
@@ -31,6 +40,7 @@
       <a href="index.html" class="">Home</a>
       <a href="about.html" class="">About</a>
       <a href="fleet.html" class="">Fleet</a>
+      <a href="service-area.html">Service Areas</a>
       <a href="clients.html" class="">Clients</a>
       <a href="contact.html" class="active">Contact</a>
     </nav>
@@ -43,6 +53,7 @@
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="fleet.html">Fleet</a>
+    <a href="service-area.html">Service Areas</a>
     <a href="clients.html">Clients</a>
     <a href="contact.html">Contact</a>
   </div>
@@ -63,6 +74,8 @@
           <input type="hidden" name="_subject" value="New freight enquiry — Vijay Roadlines website">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://akashy31.github.io/vijay-roadlines-website/thanks.html">
+          <div class="form-honey" aria-hidden="true"><label for="website">Leave this field empty</label><input id="website" name="_honey" type="text" tabindex="-1" autocomplete="off"></div>
           <div class="form-row-2">
             <div>
               <label for="name">Your name</label>
@@ -70,17 +83,17 @@
             </div>
             <div>
               <label for="phone">Phone number</label>
-              <input id="phone" name="Phone" type="tel" required>
+              <input id="phone" name="Phone" type="tel" autocomplete="tel" pattern="[+0-9() .-]{8,20}" title="Enter a valid phone number" required>
             </div>
           </div>
           <div class="form-row-2">
             <div>
               <label for="from">Pickup location</label>
-              <input id="from" name="Pickup location" type="text">
+              <input id="from" name="Pickup location" type="text" autocomplete="address-level2" required>
             </div>
             <div>
               <label for="to">Drop location</label>
-              <input id="to" name="Drop location" type="text">
+              <input id="to" name="Drop location" type="text" required>
             </div>
           </div>
           <div>
@@ -96,7 +109,9 @@
             <textarea id="msg" name="Details" placeholder="Weight, dimensions, preferred date..."></textarea>
           </div>
           <button type="submit" class="btn btn-amber" style="align-self:flex-start;">Send Enquiry</button>
-          <p class="form-note">Submitting sends an email straight to our team via FormSubmit &mdash; no account or backend needed on your end.</p>
+          <button type="button" class="btn btn-whatsapp" data-whatsapp-quote>Get quote on WhatsApp</button>
+          <p class="form-note">Email enquiries go to our team. WhatsApp opens a drafted message for you to review and send.</p>
+          <p class="form-note">The first email enquiry may require a one-time FormSubmit confirmation.</p>
         </form>
       </div>
       <div class="on-dark contact-side-panel" style="padding:36px;border-radius:3px;">
@@ -104,7 +119,7 @@
           <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1000&q=80" alt="Movement of goods across the logistics network">
         </div>
         <h3 style="color:#f5f2ea;font-size:20px;margin:18px 0 18px;">Direct contact</h3>
-        <div class="info-line"><div class="k">Phone</div><div class="v"><a href="tel:+919588147207" data-cms-tel data-cms="site.phone">+91 95881 47207</a></div></div>
+        <div class="info-line"><div class="k">Phone</div><div class="v"><a href="tel:+919588147207" data-cms-tel aria-label="Call Vijay Roadlines"><span aria-hidden="true">&#9742;</span> <span data-cms="site.phone">+91 95881 47207</span></a></div></div>
         <div class="info-line"><div class="k">WhatsApp</div><div class="v"><a href="https://wa.me/919588147207" data-cms-wa>Message on WhatsApp</a></div></div>
         <div class="info-line"><div class="k">Email</div><div class="v"><a href="mailto:vroadlinesggn@gmail.com" data-cms-mail data-cms="site.email">vroadlinesggn@gmail.com</a></div></div>
         <div class="info-line"><div class="k">Address</div><div class="v" data-cms="site.address">Shop No.1, Vill. Babra Bakipur, Near Neelkanth Dharamkanta, Distt. Gurgaon, Haryana 122503, India</div></div>
@@ -132,6 +147,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Us</a></li>
           <li><a href="fleet.html">Our Fleet</a></li>
+          <li><a href="service-area.html">Service Areas</a></li>
           <li><a href="clients.html">Clients</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -140,7 +156,7 @@
         <h4>Contact</h4>
         <ul>
           <li data-cms="site.address">Shop No.1, Vill. Babra Bakipur, Near Neelkanth Dharamkanta, Distt. Gurgaon, Haryana 122503, India</li>
-          <li><a href="tel:+919588147207" data-cms-tel>Call <span data-cms="site.phone">+91 95881 47207</span></a></li>
+          <li><a href="tel:+919588147207" data-cms-tel aria-label="Call Vijay Roadlines"><span aria-hidden="true">&#9742;</span> <span data-cms="site.phone">+91 95881 47207</span></a></li>
           <li><a href="mailto:vroadlinesggn@gmail.com" data-cms-mail>Email <span data-cms="site.email">vroadlinesggn@gmail.com</span></a></li>
         </ul>
       </div>
